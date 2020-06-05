@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import "package:flutter/material.dart";
 
 class HomePage extends StatelessWidget {
@@ -10,12 +12,20 @@ class HomePage extends StatelessWidget {
         child:
         Center(
             child: Text(
-              "Hello Flutter",
+              generateRandomNumber(),
               textDirection: TextDirection.ltr,
               style: TextStyle(color: Colors.white, fontSize: 40.0),
             )
         )
     );
     throw UnimplementedError();
+  }
+
+  String generateRandomNumber () {
+    var random = Random();
+
+    int randomNumber = random.nextInt(10);
+
+    return "Your Number is: $randomNumber";
   }
 }
